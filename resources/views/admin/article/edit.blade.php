@@ -15,6 +15,8 @@
 @stop
 
 @section('content')
+    <script src="{{url('vendor/ueditor/ueditor.config.js')}}"></script>
+    <script src="{{url('vendor/ueditor/ueditor.all.js')}}"></script>
     <h2 class="page-header">撰写新文章</h2>
     <form method="POST" action="#" accept-charset="utf-8">
         {!! csrf_field() !!}
@@ -60,12 +62,13 @@
                         {{--</select>--}}
                     {{--</div>--}}
                     <div class="form-group">
-                        <label>正文(Markdown)
+                        <label>正文(UEditor)
                             <small class="text-red">*</small>
                             <span class="text-green">min:20</span></label>
-                        <div id="editormd_id">
-                            <textarea name="content" style="display:none;"></textarea>
-                        </div>
+                            <script id="container" name="content" type="text/plain" style="min-height:300px">这里写你的初始化内容</script>
+                            <script type="text/javascript">
+                                var ue = UE.getEditor('container');
+                            </script>
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary">发布文章</button>
@@ -75,8 +78,8 @@
 
 @stop
 @section('other-js')
-    {!! editor_js() !!}
     <script src="//cdn.bootcss.com/select2/4.0.3/js/select2.full.min.js"></script>
+
     <script>
         $(".js-example-basic-multiple").select2({
             placeholder: "选择一个标签"

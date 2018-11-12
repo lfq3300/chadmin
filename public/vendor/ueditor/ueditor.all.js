@@ -6901,7 +6901,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, 'g');
                     '.view{padding:0;word-wrap:break-word;cursor:text;height:90%;}\n' +
                     //设置默认字体和字号
                     //font-family不能呢随便改，在safari下fillchar会有解析问题
-                    'body{margin:8px;font-family:sans-serif;font-size:16px;}' +
+                    'body{margin:8px;font-family:KaiTi,KaiTi_GB2312,楷体,楷体_GB2312;font-size:16px;}' +
                     //设置段落间距
                     'p{margin:5px 0;}</style>' +
                     ( options.iframeCssUrl ? '<link rel=\'stylesheet\' type=\'text/css\' href=\'' + utils.unhtml(options.iframeCssUrl) + '\'/>' : '' ) +
@@ -11425,7 +11425,7 @@ UE.plugins['font'] = function () {
         'fontfamily': [
             { name: 'songti', val: '宋体,SimSun'},
             { name: 'yahei', val: '微软雅黑,Microsoft YaHei'},
-            { name: 'kaiti', val: '楷体,楷体_GB2312, SimKai'},
+            { name: 'kaiti', val: 'KaiTi,KaiTi_GB2312,楷体,楷体_GB2312'},
             { name: 'heiti', val: '黑体, SimHei'},
             { name: 'lishu', val: '隶书, SimLi'},
             { name: 'andaleMono', val: 'andale mono'},
